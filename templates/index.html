@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Nirmit's Infinite Academy</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='font.css') }}">
+    </head>
+    <body>
+        <div class="header">  
+            <p id="headline">Infinite Academy</p>
+            <p id="caption">An AI-powered approach to education</p>
+        </div>
+        <div id="tree">
+            <div class="tree-node" onclick="window.location.href = '/programming">
+                <p class="tree-node-name">Programming</p>
+            </div>
+            <div class="tree-node" onclick="window.location.href = '/investing">
+                <p class="tree-node-name">Investing</p>
+            </div>
+            <div class="tree-node" onclick="window.location.href = '/math">
+                <p class="tree-node-name">Math</p>
+            </div>
+        </div>
+    </body>
+</html>
