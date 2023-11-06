@@ -22,8 +22,8 @@ body {
 #tree {
     display: flex;
     flex-direction: row;
-    column-gap: 75px;
-    margin-left: 15vw;
+    justify-content: center;
+    column-gap: 100px;
 }
 
 .tree-node {
