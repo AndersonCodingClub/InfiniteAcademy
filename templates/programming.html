@@ -1,12 +1,55 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Nirmit's Infinite Academy</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename='programming.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='font.css') }}">
     </head>
     <body>
-        <div class="tree-node">
-            <a href="/programming" target="_blank" style="all: unset;">
-                <p class="tree-node-name">Programming</p>
-            </a>
+        <div id="nav-bar">
+            <a href="/" class="unset-a"><img class="logo" src="{{url_for('static', filename= 'images/infinite academy logo.jpg')}}"></a>
+            <div class="option-container">
+                <a href="/" class="unset-a option-text">Home</a>
+               
+            </div>
         </div>
+
+        <div class="pop-up" id="diagnosticPopup">
+            Nirmit Education has graced your mind.
+        </div>
+
+        <div class="knowledge-zone">
+            <div class="row">
+                <div class="tree-node" id="subject-title">
+                    <p class="tree-node-name">Programming</p>
+                </div>
+            </div>
+        
+
+            <div class="row">
+                <div class="tree-node" id="diagnostic">
+                    <p class="tree-node-name">Diagnostic</p>
+                </div>
+            </div>
+
+            <script>
+                var diagnosticButton = document.getElementById('diagnostic');
+                var diagnosticPopup = document.getElementById('diagnosticPopup');
+              
+                diagnosticButton.addEventListener('click', function() {
+                  if (diagnosticPopup.style.display === 'none') {
+                    diagnosticPopup.style.display = 'block';
+                  } else {
+                    diagnosticPopup.style.display = 'none';
+                  }
+                });
+              </script>
+        </div>
+
+        
+
     </body>
 </html>

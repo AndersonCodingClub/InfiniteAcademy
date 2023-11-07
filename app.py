@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from tree import *
 
 
 app = Flask(__name__)
@@ -19,5 +20,13 @@ def investing():
 def math():
     return render_template('math.html')
 
+@app.route('/tree')
+def tree():
+    node = construct_new_tree(category='programming')
+    print_tree(node)
+    return 'Hello'
+
 if __name__ == '__main__':
     app.run(debug=True)
+    
+#http://10.9.149.244:5000

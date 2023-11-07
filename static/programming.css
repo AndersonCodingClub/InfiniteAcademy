@@ -3,6 +3,62 @@ body {
     font-family: "change", sans-serif;
 }
 
+#nav-bar {
+    font-family: "change", sans-serif;
+    display: flex;
+    margin-top: .2vh;
+    margin-left: 5vw;
+    color: black;
+}
+.unset-a {
+    all: unset;
+}
+
+.unset-a:hover {
+    cursor: pointer;
+}
+
+.option-container {
+    margin-top: 45px;
+}
+
+.option-text {
+    font-family: "change", sans-serif;
+    margin-left: 5vw;
+    font-size: 20px;
+}
+
+.option-text:hover {
+    opacity: 0.5;
+}
+
+.knowledge-zone {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px;
+
+  
+}
+
+.pop-up {
+    display: none;
+    background-color: white;
+    width: 90vw;
+    height: 90vh;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
 .tree-node {
     display: flex;
     background-color: white;
@@ -11,10 +67,14 @@ body {
     border-radius: 100%;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    margin-right: 20px;
+    margin-left: 20px;
 }
 
 .tree-node-name {
     font-weight: 700;
     font-style: normal;
     font-size: 25px;
-    font-family: Arial, Helvetica, sans-serif
+    font-family: Arial, Helvetica, sans-serif;
+}
