@@ -34,7 +34,7 @@ body {
     border-radius: 100%;
     align-items: center;
     justify-content: center;
-    transition: all .5s ease-in-out;
+    transition: all .25s ease-in-out;
 }
 
 .tree-node:hover {

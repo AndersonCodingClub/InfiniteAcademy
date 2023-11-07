@@ -35,6 +35,7 @@ body {
 .knowledge-zone {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .row {
@@ -42,21 +43,35 @@ body {
     flex-direction: row;
     justify-content: center;
     margin: 20px;
-
-  
 }
 
 .pop-up {
-    display: none;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    z-index: 90;
     background-color: white;
-    width: 90vw;
-    height: 90vh;
+    width: 0vw;
+    height: 0vh;
     border-radius: 50px;
     align-items: center;
     justify-content: center;
     text-align: center;
     margin-right: 20px;
     margin-left: 20px;
+    transition: all .15s ease-in-out;
+}
+
+#closePopup {
+    font-weight: 900;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+.pop-up-container {
+    display: flex;
+    justify-content: center;
 }
 
 .tree-node {
@@ -70,11 +85,13 @@ body {
     text-align: center;
     margin-right: 20px;
     margin-left: 20px;
+    transition: all .25s ease-in-out;
 }
 
 .tree-node:hover {
     transform: scale(1.05);
     background-color: white;
+    transition: all .25s ease-in-out;
 }
 
 .tree-node-name {

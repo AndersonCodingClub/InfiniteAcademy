@@ -8,6 +8,8 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='programming.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='font.css') }}">
     </head>
+
+
     <body>
         <div id="nav-bar">
             <a href="/" class="unset-a"><img class="logo" src="{{url_for('static', filename= 'images/infinite academy logo.jpg')}}"></a>
@@ -16,21 +18,21 @@
                
             </div>
         </div>
-
-        <div class="pop-up" id="diagnosticPopup">
-            Nirmit Education has graced your mind.
+        <div class="pop-up-container">
+            <div class="pop-up" id="diagnosticPopup">
+                <div id="closePopup">X</div>
+                Nirmit Education has graced your mind.
+            </div>
         </div>
 
         <div class="knowledge-zone">
+
+
             <div class="row">
                 <div class="tree-node" id="subject-title">
                     <p class="tree-node-name">Programming</p>
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="tree-node" class ="sub-subject-title"
-        
+            </div> 
 
             <div class="row">
                 <div class="tree-node" id="diagnostic">
@@ -41,13 +43,17 @@
             <script>
                 var diagnosticButton = document.getElementById('diagnostic');
                 var diagnosticPopup = document.getElementById('diagnosticPopup');
+
+                var closeButton = document.getElementById('closePopup');
               
-                diagnosticButton.addEventListener('click', function() {
-                  if (diagnosticPopup.style.display === 'none') {
-                    diagnosticPopup.style.display = 'block';
-                  } else {
-                    diagnosticPopup.style.display = 'none';
-                  }
+                diagnosticButton.addEventListener('click', () => {
+                    diagnosticPopup.style.width = "80vw";
+                    diagnosticPopup.style.height = "80vh";
+                });
+
+                closeButton.addEventListener('click', () => {
+                    diagnosticPopup.style.width = "0";
+                    diagnosticPopup.style.height = "0";
                 });
               </script>
         </div>
