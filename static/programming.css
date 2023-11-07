@@ -72,6 +72,11 @@ body {
     margin-left: 20px;
 }
 
+.tree-node:hover {
+    transform: scale(1.05);
+    background-color: white;
+}
+
 .tree-node-name {
     font-weight: 700;
     font-style: normal;

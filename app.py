@@ -23,8 +23,7 @@ def math():
 @app.route('/tree')
 def tree():
     node = construct_new_tree(category='programming')
-    print_tree(node)
-    return 'Hello'
+    return render_template('test_tree.html', node=node, node_level=0)
 
 if __name__ == '__main__':
     app.run(debug=True)
