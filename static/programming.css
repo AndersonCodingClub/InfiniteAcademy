@@ -10,6 +10,18 @@ body {
     margin-left: 5vw;
     color: black;
 }
+
+.logo {
+    margin-top: 25px;
+    width: 100px;
+    height: 62.5px;
+}
+
+.logo:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
 .unset-a {
     all: unset;
 }
@@ -71,6 +83,7 @@ body {
 
 #closePopup:hover {
     opacity: .7;
+    cursor: pointer;
 }
 
 .pop-up-container {
