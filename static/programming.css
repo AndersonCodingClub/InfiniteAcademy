@@ -18,7 +18,7 @@ body {
 }
 
 .logo:hover {
-    opacity: 0.7;
+    opacity: 0.5;
     cursor: pointer;
 }
 
@@ -28,20 +28,6 @@ body {
 
 .unset-a:hover {
     cursor: pointer;
-}
-
-.option-container {
-    margin-top: 45px;
-}
-
-.option-text {
-    font-family: "change", sans-serif;
-    margin-left: 5vw;
-    font-size: 20px;
-}
-
-.option-text:hover {
-    opacity: 0.5;
 }
 
 .knowledge-zone {
@@ -82,7 +68,7 @@ body {
 }
 
 #closePopup:hover {
-    opacity: .7;
+    opacity: 0.5;
     cursor: pointer;
 }
 
