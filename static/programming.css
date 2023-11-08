@@ -65,8 +65,12 @@ body {
 #closePopup {
     font-weight: 900;
     position: absolute;
-    top: 50px;
-    left: 50px;
+    top: 40px;
+    left: 40px;
+}
+
+#closePopup:hover {
+    opacity: .7;
 }
 
 .pop-up-container {
