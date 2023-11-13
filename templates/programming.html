@@ -17,20 +17,18 @@
         <div class="pop-up-container">
             <div class="pop-up" id="diagnosticPopup">
                 <div id="closePopup"><img src="{{url_for('static', filename='images/close.png')}}" style="height: 25px; width: 25px;"></div>
-                Nirmit Education has graced your mind.
+                <p>Nirmit Education has graced your mind.</p>
             </div>
         </div>
 
         <div class="knowledge-zone" id="knowledge-zone">
-
-
-            <div class="row">
+            <div class="row" id="0">
                 <div class="tree-node" id="subject-title">
                     <p class="tree-node-name">Programming</p>
                 </div>
             </div> 
 
-            <div class="row">
+            <div class="row" id="1">
                 <div class="tree-node" id="diagnostic">
                     <p class="tree-node-name">Diagnostic</p>
                 </div>
@@ -39,7 +37,7 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row" id="2">
                 <div class="tree-node" id="educational">
                     <p class="tree-node-name">educational</p>
                 </div>
@@ -48,96 +46,13 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row" id="3">
                 <div class="tree-node" id="super-narmit">
                     <p class="tree-node-name">Super Narmit</p>
                 </div>
             </div>
         </div>
-        <script>
-
-            // tree: [father, [child, [grandchild, great grandchild (virgin)], grandchild (virgin)], child (virgin)] <-- need recursion to access children infinitely
-            var programmingPath = [document.getElementById("subject-title"), [document.getElementById("diagnostic"), [document.getElementById("educational")]], [document.getElementById("narmit"), [document.getElementById("narmit-PIDs"), [document.getElementById("super-narmit")]]]];
-            
-            function getPositionOfChildren(element) { // will return data in array with format: [x, y, width, height, x, y...] - but [[x, y, width, height], [x,...]] would be better
-
-                var positions = [];
-
-                element.forEach((fatherNirmit, i) => { 
-                    if(i != 0) {
-                        positions.push(element[i][0].getBoundingClientRect().left + (0.5 * element[i][0].getBoundingClientRect().width));
-                        positions.push(element[i][0].getBoundingClientRect().top);
-                        positions.push(element[i][0].getBoundingClientRect().width);
-                        positions.push(element[i][0].getBoundingClientRect().height);
-                    }
-                });
-
-                return positions;
-            }
-
-            function drawLineToChildren(element) {
-                var childPositions = getPositionOfChildren(element);
-                var lines = [];
-
-                for (i =0; i<childPositions.length; i+=4) {
-                    var xPos = childPositions[i];
-                    var yPos = childPositions[i+1];
-                    var width = childPositions[i+2];
-                    var height = childPositions[i+3];
-
-                    var svg = document.createElement("SVG");
-                    var line = document.createElement("line");
-                    
-
-                    svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-                    svg.setAttribute('class', 'lineContainer');
-                    line.setAttribute('x1', xPos);
-                    line.setAttribute('y1', yPos);
-                    line.setAttribute('x2', element[0].getBoundingClientRect().left + (0.5 * element[0].getBoundingClientRect().width));
-                    line.setAttribute('y2', element[0].getBoundingClientRect().bottom - (0.5 * element[0].getBoundingClientRect().height));
-
-                    document.body.appendChild(svg);
-                    svg.appendChild(line);
-                }
-            }
-
-            function doSomethingForWholeFamily(array, thingToDo) {  // <- **thingToDo() MUST accept an ARRAY. In order to just do something for the element, only write the function with respect to array[0].
-                var depth = 0;
-                array.forEach((node, i) => {
-                    if (i == 0) {
-                        thingToDo(array);
-                    } else if (Array.isArray(node)){
-                        depth++;
-                        console.log(depth);
-                        doSomethingForWholeFamily(node, thingToDo);
-                    }
-                });
-            }
-
-
-            document.body.onload = function () {
-                
-                doSomethingForWholeFamily(programmingPath, drawLineToChildren);
-
-                document.body.innerHTML = document.body.innerHTML; // <- renders everything just added inside of BODY
-                
-                var diagnosticButton = document.getElementById('diagnostic');  // anything accessed from original document, before dynamic changes, must be done AFTER rerendering body or else it will be lost
-                var diagnosticPopup = document.getElementById('diagnosticPopup');
-
-                var closeButton = document.getElementById('closePopup');
-
-                diagnosticButton.addEventListener('click', () => { 
-                    diagnosticPopup.style.width = "80vw";
-                    diagnosticPopup.style.height = "80vh";
-                    console.log("sss");
-                });
-
-                closeButton.addEventListener('click', () => {
-                    diagnosticPopup.style.width = "0";
-                    diagnosticPopup.style.height = "0";
-                });
-            }
-        </script>
+        <script src="{{url_for('static', filename='programming.js')}}"></script>
         
     </body>
 </html>
