@@ -135,10 +135,19 @@ function loadPopup(material) {
 }
 
 
+function showPopup() {
+    // might be nice: add button html tags inside of every module and have popup show from button function instead of event listener
+}
+
+
+function closePopup() {
+    // might be nice: add button html tag inside of close button and have popup close from button function instead of event listener
+}
+
 
 document.body.onload = function () {
     birthChild('narmit', 'Narmit\'s Value'); // plan: include button at bottom of every node w/o any children that will run birthChild, AI will generate appropriate topic given the father module's name.
-    birthChild('narmit', "dogfinder");
+    birthChild('narmit', "dogfinder");       //       create function for all this, and rawdog call function from HTML button to avoid dealing with javascript
     birthChild('dogfinder', 'dogeater');
 
     doSomethingForWholeFamily(programmingPath, drawLineToChildren); // bugs out whenever screen changes, need to fix
@@ -150,8 +159,6 @@ document.body.onload = function () {
  // anything accessed from original document, before dynamic changes, must be done AFTER rerendering body or else it will be lost
     var diagnosticButton = document.getElementsByClassName('tree-node'); 
     var diagnosticPopup = document.getElementById('diagnosticPopup');
-
-
 
     Array.from(diagnosticButton).forEach(function (node) {
         node.addEventListener('click', () => { 
