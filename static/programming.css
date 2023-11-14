@@ -46,7 +46,8 @@ body {
 .pop-up {
     display: flex;
     overflow: hidden;
-    position: absolute;
+    overflow-y: auto;
+    position: fixed;
     z-index: 90;
     background-color: white;
     width: 0vw;
