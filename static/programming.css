@@ -127,11 +127,10 @@ line {
     z-index: -91;
 }
 .gray-unknown {
-    position: absolute;
+    position: relative;
     margin-top: 25%;
-    width: 100%;
-    height: 20%;
-    opacity: .5;
+    height: 40px;
+    opacity: .75;
     background-color: gray;
     z-index: 100;
 }
