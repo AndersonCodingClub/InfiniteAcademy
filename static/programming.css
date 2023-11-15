@@ -126,3 +126,12 @@ line {
     stroke-width: 2;
     z-index: -91;
 }
+.gray-unknown {
+    position: absolute;
+    margin-top: 25%;
+    width: 100%;
+    height: 20%;
+    opacity: .5;
+    background-color: gray;
+    z-index: 100;
+}

@@ -145,10 +145,31 @@ function closePopup() {
 }
 
 
+function getEveryVirgin(tree) {
+    var virgins = [];
+
+    doSomethingForWholeFamily(tree, (element) => {
+        if (directDescendentCount(element[0].id) == 0) {
+            virgins.push(element);
+        }
+    });
+
+    return virgins;
+}
+
+
+function putButtonsOnVirgins() {
+    
+}
+
+
 document.body.onload = function () {
-    birthChild('narmit', 'Narmit\'s Value'); // plan: include button at bottom of every node w/o any children that will run birthChild, AI will generate appropriate topic given the father module's name.
+    birthChild('narmit', 'Narmits-Value'); // plan: include button at bottom of every node w/o any children that will run birthChild, AI will generate appropriate topic given the father module's name.
     birthChild('narmit', "dogfinder");       //       create function for all this, and rawdog call function from HTML button to avoid dealing with javascript
     birthChild('dogfinder', 'dogeater');
+
+    directDescendentCount('Narmits-Value')
+    console.log(getEveryVirgin(programmingPath));
 
     doSomethingForWholeFamily(programmingPath, drawLineToChildren); // bugs out whenever screen changes, need to fix
 
