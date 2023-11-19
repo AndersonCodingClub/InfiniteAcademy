@@ -79,6 +79,7 @@ body {
 }
 
 .tree-node {
+    position: relative;
     display: flex;
     background-color: white;
     width: 200px;
@@ -126,6 +127,7 @@ line {
     stroke-width: 2;
     z-index: -91;
 }
+
 .gray-unknown {
     position: fixed;
     height: 80px;

@@ -33,7 +33,6 @@ function getNodeFromTreeAsArray(arrayToSearch, nodeToFind) {  // <- returns arra
     arrayToSearch.forEach((nodes, i) => {
         if (!Array.isArray(nodes) && arrayToSearch[i] == document.getElementById(nodeToFind)) {
             foundNode = arrayToSearch;
-            console.log(foundNode);
         } else if (Array.isArray(nodes) && nodes[0] == document.getElementById(nodeToFind) && !foundNode) {
             foundNode = arrayToSearch[i];
         } else if (Array.isArray(nodes) && !foundNode){
@@ -42,6 +41,30 @@ function getNodeFromTreeAsArray(arrayToSearch, nodeToFind) {  // <- returns arra
     });
     
     return foundNode;
+}
+
+
+function getFatherById(arrayToSearch, nodeToFind) {
+    var childElement = document.getElementById(nodeToFind);
+    var foundNode;
+    var fatherNode;
+
+    if (!nodeToFind) return;
+
+    arrayToSearch.forEach((nodes, i) => {
+        if (!Array.isArray(nodes) && arrayToSearch[i] == document.getElementById(nodeToFind)) {
+            fatherNode = nodes;
+            foundNode = arrayToSearch;
+        } else if (Array.isArray(nodes) && nodes[0] == document.getElementById(nodeToFind) && !foundNode && !fatherNode) {
+            fatherNode = arrayToSearch;
+            foundNode = arrayToSearch[i];
+        } else if (Array.isArray(nodes) && !foundNode && !fatherNode){
+            fatherNode = getFatherById(nodes, nodeToFind);
+        }
+    });
+    
+    if (!fatherNode) return null;
+    return fatherNode[0];
 }
 
 
@@ -69,9 +92,29 @@ function birthChild(fatherNodeID, childName) {
     father.push(newNodeAsArray);
 
 
-    if(document.getElementById(parseInt(father[0].parentElement.id) + 1)) {
-            rowBelowFather = document.getElementById(parseInt(father[0].parentElement.id) + 1)
+    if(document.getElementById(parseInt(father[0].parentElement.id) + 1)) { // must sort node to be in order
+            rowBelowFather = document.getElementById(parseInt(father[0].parentElement.id) + 1);
             rowBelowFather.appendChild(newNode);
+            var placeToBePut = father[1][0].previousElementSibling;
+            var nextNodeId;
+
+            if (newNode.nextElementSibling) {
+                nextNodeId = newNode.nextElementSibling.id;
+            }
+
+            if (father[1][0].parentElement == rowBelowFather) {      // does not work for virgin nodes (unfortunate)
+                rowBelowFather.insertBefore(newNode, father[1][0]);
+            } else {
+                var nodeParent = getNodeFromTreeAsArray(programmingPath);
+                rowBelowFather.insertBefore(newNode, placeToBePut);
+            }      
+
+            // while (getFatherById(programmingPath, nextNodeId) != getFatherById(programmingPath, newNode.id) && getFatherById(programmingPath, newNode.previousElementSibling.id) != getFatherById(programmingPath, newNode.id)) {
+            //     var neighborNode = newNode.previousElementSibling;
+
+            //     rowBelowFather.insertBefore(newNode, neighborNode);
+            // }
+
     } else {
         var newRow = document.createElement('div');
 
@@ -105,7 +148,6 @@ function getPositionOfChildren(element) { // will return data in array with form
 
 function drawLineToChildren(element) {
     var childPositions = getPositionOfChildren(element);
-    var lines = [];
 
     for (i =0; i<childPositions.length; i+=4) {
         var xPos = childPositions[i];
@@ -165,13 +207,9 @@ function putButtonsOnVirgins() {
 
 
 document.body.onload = function () {
-    birthChild('narmit', 'Narmits Value'); // plan: include button at bottom of every node w/o any children that will run birthChild, AI will generate appropriate topic given the father module's name.
-    birthChild('narmit', "dogfinder");       //       create function for all this, and rawdog call function from HTML button to avoid dealing with javascript
-    birthChild('dogfinder', 'dogeater');
-    birthChild('super-narmit', 'Ultra Narmit');
-
-    directDescendentCount('Narmits-Value')
-    console.log(getEveryVirgin(programmingPath));
+    birthChild('diagnostic', 'new');
+    birthChild('subject-title', 'js');
+    birthChild('new', 'newer');
 
     doSomethingForWholeFamily(programmingPath, drawLineToChildren); // bugs out whenever screen changes, need to fix
 
