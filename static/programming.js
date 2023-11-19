@@ -223,7 +223,7 @@ function generateNewNodes(parentTopic, parentContent) {
 
         data.result.forEach(receivedPackage => {      //  response.result should be a list of tuples: [("name", "content"), ("name", "content")]
             presetModules[receivedPackage[0]] = receivedPackage[1];
-            birthChild(parentContent, receivedPackage[0]);
+            birthChild(parentTopic, receivedPackage[0]);
         });
     });
 
