@@ -1,18 +1,9 @@
 // tree structure: [father, [child, [grandchild, great grandchild (virgin)], grandchild (virgin)], child (virgin)]
-var programmingPath = [document.getElementById("subject-title"), 
-                            [document.getElementById("diagnostic"), 
-                                [document.getElementById("educational")]], 
-                            [document.getElementById("narmit"), 
-                                [document.getElementById("narmit-PIDs"), 
-                                    [document.getElementById("super-narmit")]]]];
+var programmingPath = [document.getElementById("subject-title"), [document.getElementById('web-design')], [document.getElementById('algorithms')], [document.getElementById('languages')], [document.getElementById('data-structures')], [document.getElementById('basic-concepts')]];
 
 
 var presetModules = {  // hardcoded HTML is included for modules we always want to be the same, namely the starting modules like Intro To XXX
-    "Programming": `<!DOCTYPE html><html lang="en"><head>    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Infinite Academy: Introduction to Programming</title>    <style>        body {            background-color: antiquewhite;        }        .container {            max-width: 800px;            margin: 0 auto;            padding: 20px;            background-color: #f5f5dc; /* beige color for the container */            border-radius: 10px;            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);        }        .heading {            color: #8B4513; /* saddlebrown color for the heading */            text-align: center;            font-size: 32px;            margin-bottom: 20px;        }        .content {            color: #696969; /* dimgray color for the content */            line-height: 1.6;        }        .svg-image {            width: 100%;            height: auto;            margin-top: 20px;        }    </style></head><body>    <div class="container">        <h1 class="heading">Welcome to the Infinite Academy</h1>        <div class="content">            <p>Programming is like exploring an endless library of possibilities, where each book represents a different language or concept.</p>            <p>In this infinite realm, programming languages are tools that allow you to communicate with computers and instruct them to perform specific tasks.</p>            <p>Just like in the ancient sand library, understanding the structure and syntax of a programming language is key to unlocking the knowledge it holds.</p>            <p>Let's embark on this journey together and learn the art of programming!</p>        </div>                <svg class="svg-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#8B4513">            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2zm0-4h-2V7h2zm-1-6a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>        </svg>    </div></body></html>`,
-    "Narmit PIDs":  `<head>        <meta charset="UTF-8">        <meta name="viewport" content="width=device-width, initial-scale=1.0">        <title>Infinite Academy - Nirmit PIDs</title>        <style>                .container {                max-width: 800px;                margin: 50px auto;                padding: 20px;                background-color: #fff;                border-radius: 10px;                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);            }                .section-title {                color: #b8860b;                font-size: 24px;                font-weight: bold;                margin-bottom: 20px;            }                .text {                color: #555;                font-size: 16px;                line-height: 1.6;                margin-bottom: 20px;            }                .image {                width: 100%;                height: auto;                margin-bottom: 20px;            }        </style>    </head>        <body>        <div class="container">            <div class="section-title">Exploring Nirmit PIDs in the Infinite Academy</div>                <div class="text">                <p>Welcome to the Infinite Academy, where knowledge transcends time! Today, we delve into the fascinating world of Nirmit PIDs.</p>                    <p>Nirmit PIDs, or Persistent Identifiers, are crucial in the digital realm. They serve as unique and everlasting labels for digital objects, ensuring their identification and accessibility over time.</p>                    <p>Just like the ancient scrolls in vast expanse of the Infinite Academy, Nirmit PIDs are the digital tags that allow us to locate and reference information in the vast expanse of the internet.</p>            </div>                <div class="image">                <!-- SVG Image representing Nirmit PIDs -->                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#b8860b" width="50px" height="50px">                    <path d="M0 0h24v24H0z" fill="none" />                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 16h-2v-2h2v2zm0-4h-2V7h2v7z" />                </svg>            </div>                <div class="text">                <p>Think of Nirmit PIDs as the ancient keys to the library's wisdom. They ensure that no matter how much time passes, we can always locate and access the digital knowledge preserved within the vast archives of the Infinite Academy.</p>                    <p>Developers and archivists use Nirmit PIDs to create a timeless connection between digital entities and their identifiers, allowing us to navigate the ever-expanding corridors of the digital realm.</p>            </div>                <div class="section-title">Unlocking Wisdom Across Time</div>                <div class="text">                <p>As we navigate the Infinite Academy, remember the importance of Nirmit PIDs. They are the threads that weave through the fabric of time, connecting us to the knowledge of the past and paving the way for the discoveries of the future.</p>                    <p>Continue your journey through the yellowed pages of the Infinite Academy, where each Nirmit PID opens a door to a new realm of understanding.</p>            </div>        </div>    </body>`,
-    "Narmit Module": `<!DOCTYPE html><html lang="en"><head>    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Infinite Academy: Nirmit Programming Concept</title>    <style>        body {            background-color: antiquewhite;        }        .section {            margin: 20px;            padding: 20px;            background-color: #ffebcd;            border-radius: 10px;            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);        }        .concept-title {            color: #8b4513;            font-size: 24px;            font-weight: bold;        }        .concept-text {            color: #333;            font-size: 16px;            line-height: 1.6;        }        .svg-container {            width: 100%;            max-width: 400px;            margin: 20px 0;        }    </style></head><body>    <div class="section">        <div class="concept-title">Understanding Nirmit in Programming</div>        <div class="concept-text">            <p>Nirmit, in the realm of programming, refers to the concept of creating or building something. It emphasizes the process of construction, often in a systematic and organized manner.</p>                        <p>Just as an architect designs and builds a structure, a programmer uses the nirmit approach to craft software solutions. It involves breaking down complex problems into smaller, manageable parts and then systematically constructing a program to solve those parts.</p>            <p>This approach promotes modular and scalable code, making it easier to maintain and understand. Nirmit encourages the use of functions, classes, and other programming structures to organize code and enhance reusability.</p>        </div>        <div class="svg-container">            <!-- SVG illustration representing the concept of building or construction -->            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#8b4513" width="100%" height="100%">                <path d="M0 0h24v24H0V0z" fill="none"/>                <path d="M17 18.41V11c0-.55-.45-1-1-1s-1 .45-1 1v5.41l-1.71-1.71a.996.996 0 0 0-1.41 0l-4.59 4.59c-.39.39-1.02.39-1.41 0l-4.59-4.59a.996.996 0 0 0-1.41 0L3 15.41V11c0-2.21 1.79-4 4-4h2V4c0-1.1.9-2 2-2s2 .9 2 2v3h2c2.21 0 4 1.79 4 4v7.41l1.71-1.71a.996.996 0 0 0 0-1.41L17 18.41zM12 2C9.79 2 8 3.79 8 6v3h8V6c0-2.21-1.79-4-4-4z"/>            </svg>        </div>        <div class="concept-text">            <p>By applying the nirmit concept, programmers can enhance the clarity, efficiency, and maintainability of their code, fostering a structured and organized approach to software development.</p>                        <p>If you want to delve deeper into this programming concept, check out resources like <a href="https://en.wikipedia.org/wiki/Software_development" target="_blank">Software Development on Wikipedia</a>.</p>        </div>    </div></body></html>`,
-    "Super Narmit": `<!DOCTYPE html><html lang="en"><head>    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Infinite Academy: Super Nirmit</title>    <style>        body {            background-color: antiquewhite;        }        .container {            max-width: 800px;            margin: 0 auto;            padding: 20px;        }        .section {            margin-bottom: 20px;        }        .title {            font-size: 24px;            font-weight: bold;            color: #8B4513; /* SaddleBrown */        }        .subtitle {            font-size: 18px;            color: #696969; /* DimGray */        }        .content {            font-size: 16px;            line-height: 1.6;        }        .svg-image {            max-width: 100%;            height: auto;            display: block;            margin: 20px 0;        }    </style></head><body>    <div class="container">        <div class="section">            <div class="title">Unveiling the Mystery: Super Nirmit in Programming</div>            <div class="subtitle">Exploring the Depths of Tier 4 Concepts</div>        </div>        <div class="section">            <div class="content">                <p>Welcome to the Infinite Academy, where the ancient and profound concept of Super Nirmit awaits your exploration. In the vast landscape of programming, Super Nirmit stands as a tier 4 concept, representing a pinnacle of sophistication.</p>                <p>Super Nirmit, derived from the Sanskrit word "निर्मित" meaning 'created,' goes beyond traditional programming paradigms. It encapsulates the idea of creating highly specialized and interconnected components, transcending the boundaries of conventional software architecture.</p>                <p>To visualize this concept, imagine a network of interconnected gears, each representing a specialized module within a software system. These gears, when combined, form a powerful machinery capable of intricate tasks and seamless interactions.</p>            </div>        </div>        <div class="section">            <div class="title">Illustrating Super Nirmit</div>            <div class="subtitle">A Visual Journey into Complexity</div>            <!-- SVG Image depicting interconnected gears -->            <svg class="svg-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">                <!-- SVG content representing interconnected gears -->                <!-- Insert your SVG content here or provide an external link -->            </svg>        </div>        <div class="section">            <div class="content">                <p>As you delve deeper into the realm of Super Nirmit, consider each gear as a meticulously crafted component, harmoniously working with others to achieve a higher purpose. This concept emphasizes the importance of modular design, scalability, and adaptability in building complex software systems.</p>                <p>For a more in-depth understanding of Super Nirmit, explore real-world applications and case studies that showcase its implementation. The journey into tier 4 concepts like Super Nirmit is an intellectual adventure, pushing the boundaries of what can be achieved in the ever-evolving landscape of programming.</p>            </div>        </div>        <div class="section">            <div class="title">Further Exploration</div>            <div class="subtitle">Dive Deeper into the Infinite</div>            <p class="content">To continue your exploration, consider studying resources such as:</p>            <!-- External link to a resource about Super Nirmit -->            <a class="content" href="https://en.wikipedia.org/wiki/Software_design_pattern#Super_nirmit" target="_blank">Super Nirmit: Beyond the Basics</a>        </div>    </div></body></html>`,
-    "Ultra Narmit": `<!DOCTYPE html><html lang="en"><head>    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Infinite Academy: Super Nirmit Follow-Up</title>    <style>        /* No changes to body styling allowed */        .container {            max-width: 800px;            margin: 0 auto;            padding: 20px;        }        .section {            margin-bottom: 20px;        }        .title {            font-size: 24px;            font-weight: bold;            color: #8B4513; /* SaddleBrown */        }        .subtitle {            font-size: 18px;            color: #696969; /* DimGray */        }        .content {            font-size: 16px;            line-height: 1.6;        }        .svg-image {            max-width: 100%;            height: auto;            display: block;            margin: 20px 0;        }        /* Additional styles for follow-up content */        .follow-up {            background-color: #f0f8ff; /* AliceBlue */            padding: 15px;            border-radius: 10px;        }    </style></head><body>    <div class="container">        <div class="section">            <div class="title">Expanding Horizons: Super Nirmit Mastery</div>            <div class="subtitle">Delving Deeper into Tier 4 Marvels</div>        </div>        <div class="section">            <div class="content">                <p>Congratulations on embarking on the journey of understanding Super Nirmit! As we continue our exploration, let's focus on practical applications and best practices to master this intricate concept.</p>                <p>Super Nirmit, with its interconnected gears of sophistication, demands a strategic approach to development. Let's delve into some key principles:</p>                <ul>                    <li><span class="follow-up">Scalability:</span> Ensure that your Super Nirmit creations can scale seamlessly to handle increased complexity and demand.</li>                    <li><span class="follow-up">Modularity:</span> Embrace modular design principles, breaking down your system into manageable, independent components.</li>                    <li><span class="follow-up">Adaptability:</span> Equip your creations with the ability to adapt to changing requirements and technological landscapes.</li>                </ul>            </div>        </div>        <div class="section">            <div class="title">Mastering Super Nirmit</div>            <div class="subtitle">Interactive Workshop and Real-world Insights</div>            <!-- SVG Image with interactive elements -->            <svg class="svg-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">                <!-- SVG content representing interactive gears with tooltips or animations -->                <!-- Insert your SVG content here or provide an external link -->            </svg>        </div>        <div class="section">            <div class="content">                <p>Now, let's elevate our understanding through an interactive workshop. Engage with real-world scenarios, explore case studies, and participate in hands-on activities to reinforce your comprehension of Super Nirmit.</p>                <p>Remember, the journey into tier 4 concepts like Super Nirmit is not just about theory; it's about applying your knowledge to craft innovative solutions that push the boundaries of what's possible.</p>            </div>        </div>        <div class="section">            <div class="title">Continued Learning</div>            <div class="subtitle">Unlocking New Dimensions</div>            <p class="content">To further enhance your expertise, consider delving into advanced resources:</p>            <!-- External link to an advanced resource about Super Nirmit -->            <a class="content" href="https://wikipedia.com/wiki/super-nirmit" target="_blank">Super Nirmit Mastery: Advanced Techniques</a>        </div>    </div></body></html>`,
+    "subject-title": `<!DOCTYPE html><html lang="en"><head>  <meta charset="UTF-8">  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Infinite Academy - Computer Science Essentials</title>  <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file if needed --></head><body>  <div id="container">    <header class="academy-header">      <h1>Welcome to the Infinite Academy</h1>    </header>        <section class="programming-intro">      <h2>Introduction to Programming</h2>      <p>Programming is the art of instructing computers to perform tasks. It involves writing a set of instructions in a language that a computer can understand.</p>      <p>Let's explore the basic building blocks:</p>      <ul class="programming-basics">        <li><strong>Variables:</strong> Containers for storing data.</li>        <li><strong>Conditions:</strong> Statements that control the flow of a program.</li>        <li><strong>Loops:</strong> Repetitive structures to perform tasks iteratively.</li>        <li><strong>Functions:</strong> Reusable blocks of code that perform a specific task.</li>      </ul>      <p>To get started, you can learn a programming language like <a href="https://www.python.org/" target="_blank">Python</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">JavaScript</a>, or <a href="https://www.learnjavaonline.org/" target="_blank">Java</a>.</p>    </section>    <section class="web-design">      <h2>Web Design</h2>      <p>Web design involves creating visually appealing and user-friendly websites. It includes aspects such as layout, color theory, typography, and responsive design to ensure a seamless user experience across devices.</p>      <p>Explore the world of web design by learning HTML, CSS, and JavaScript. Dive into frameworks like <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a> for efficient and responsive design.</p>    </section>    <section class="algorithms">      <h2>Algorithms</h2>      <p>Algorithms are step-by-step procedures or formulas for solving problems. They are crucial in computer science for efficient data processing and problem-solving. Common algorithms include sorting, searching, and graph traversal algorithms.</p>      <p>Discover the importance of algorithms in programming and explore algorithmic thinking to solve complex problems.</p>    </section>    <section class="languages">      <h2>Programming Languages</h2>      <p>Programming languages are the tools used to write software. Each language has its syntax and purpose. Examples include Python, JavaScript, Java, and more. Choosing the right language depends on the task at hand.</p>      <p>Explore the diverse world of programming languages and their applications in different domains.</p>    </section>    <section class="data-structures">      <h2>Data Structures</h2>      <p>Data structures organize and store data for efficient retrieval and manipulation. Examples include arrays, linked lists, trees, and hash tables. Choosing the right data structure is crucial for optimizing algorithms.</p>      <p>Delve into the study of data structures and understand their role in building efficient and scalable software.</p>    </section>    <footer class="academy-footer">      <p>Embark on your journey through the Infinite Academy and unlock the boundless possibilities of the digital world.</p>    </footer>  </div></body></html>`,
 }
 
 
@@ -30,41 +21,17 @@ function doSomethingForWholeFamily(array, thingToDo) {  // <- **thingToDo() MUST
 function getNodeFromTreeAsArray(arrayToSearch, nodeToFind) {  // <- returns array, useful for pushing a new node as a child to a different node.
     var foundNode;
 
-    arrayToSearch.forEach((nodes, i) => {
-        if (!Array.isArray(nodes) && arrayToSearch[i] == document.getElementById(nodeToFind)) {
+    arrayToSearch.forEach((nodes) => {
+        if (!Array.isArray(nodes) && nodes === document.getElementById(nodeToFind)) {
             foundNode = arrayToSearch;
-        } else if (Array.isArray(nodes) && nodes[0] == document.getElementById(nodeToFind) && !foundNode) {
-            foundNode = arrayToSearch[i];
-        } else if (Array.isArray(nodes) && !foundNode){
+        } else if (Array.isArray(nodes) && nodes[0] === document.getElementById(nodeToFind) && !foundNode) {
+            foundNode = nodes;
+        } else if (Array.isArray(nodes) && !foundNode) {
             foundNode = getNodeFromTreeAsArray(nodes, nodeToFind);
         }
     });
-    
+
     return foundNode;
-}
-
-
-function getFatherById(arrayToSearch, nodeToFind) {
-    var childElement = document.getElementById(nodeToFind);
-    var foundNode;
-    var fatherNode;
-
-    if (!nodeToFind) return;
-
-    arrayToSearch.forEach((nodes, i) => {
-        if (!Array.isArray(nodes) && arrayToSearch[i] == document.getElementById(nodeToFind)) {
-            fatherNode = nodes;
-            foundNode = arrayToSearch;
-        } else if (Array.isArray(nodes) && nodes[0] == document.getElementById(nodeToFind) && !foundNode && !fatherNode) {
-            fatherNode = arrayToSearch;
-            foundNode = arrayToSearch[i];
-        } else if (Array.isArray(nodes) && !foundNode && !fatherNode){
-            fatherNode = getFatherById(nodes, nodeToFind);
-        }
-    });
-    
-    if (!fatherNode) return null;
-    return fatherNode[0];
 }
 
 
@@ -87,9 +54,11 @@ function birthChild(fatherNodeID, childName) {
 
     newNode.setAttribute('id', childName);
     newNode.setAttribute('class', 'tree-node');
+    newNode.setAttribute('onclick', 'showPopup(this.id);');
 
 
     father.push(newNodeAsArray);
+    newNode.appendChild(newNodeContentContainer);
 
 
     if(document.getElementById(parseInt(father[0].parentElement.id) + 1)) { // must sort node to be in order
@@ -107,7 +76,7 @@ function birthChild(fatherNodeID, childName) {
 
 
 
-            if (father[1][0].parentElement == rowBelowFather) {      // does not work for virgin nodes (unfortunate)
+            if (father[1][0].parentElement == rowBelowFather) {
                 rowBelowFather.insertBefore(newNode, father[1][0]);
             } else {
                 var nodeParent = getNodeFromTreeAsArray(programmingPath);
@@ -129,11 +98,7 @@ function birthChild(fatherNodeID, childName) {
                     rowBelowFather.insertBefore(newNode, firstNeighborKid);
                 }
             }
-            // while (getFatherById(programmingPath, nextNodeId) != getFatherById(programmingPath, newNode.id) && getFatherById(programmingPath, newNode.previousElementSibling.id) != getFatherById(programmingPath, newNode.id)) {
-            //     var neighborNode = newNode.previousElementSibling;
-
-            //     rowBelowFather.insertBefore(newNode, neighborNode);
-            // }
+            newNode.appendChild(newNodeContentContainer);
 
     } else {
         var newRow = document.createElement('div');
@@ -143,6 +108,8 @@ function birthChild(fatherNodeID, childName) {
 
         document.getElementById('knowledge-zone').appendChild(newRow);
         newRow.appendChild(newNode);
+        newNode.appendChild(newNodeContentContainer);
+
     }
     newNode.appendChild(newNodeContentContainer);
 }
@@ -186,9 +153,12 @@ function drawLineToChildren(element) {
         line.setAttribute('x2', element[0].getBoundingClientRect().left + (0.5 * element[0].getBoundingClientRect().width));
         line.setAttribute('y2', element[0].getBoundingClientRect().bottom - (0.5 * element[0].getBoundingClientRect().height));
 
-        document.body.appendChild(svg);
+        document.getElementById("line-container").appendChild(svg);
         svg.appendChild(line);
     }
+
+    document.getElementById("line-container").innerHTML = document.getElementById("line-container").innerHTML;
+
 }
 
 
@@ -198,13 +168,26 @@ function loadPopup(material) {
 }
 
 
-function showPopup() {
-    // might be nice: add button html tags inside of every module and have popup show from button function instead of event listener
+var virgins = getEveryVirgin(programmingPath);
+
+
+function showPopup(topic) {
+    if (!event.shiftKey) {
+        var diagnosticPopup = document.getElementById('diagnosticPopup');
+
+        diagnosticPopup.style.width = "80vw";
+        diagnosticPopup.style.height = "80vh";
+
+        loadPopup(presetModules[topic]);
+    } else if (getEveryVirgin(programmingPath).includes(document.getElementById(topic))) {
+        generateNewNode(topic);
+    }
 }
 
 
 function closePopup() {
-    // might be nice: add button html tag inside of close button and have popup close from button function instead of event listener
+    diagnosticPopup.style.width = "0";
+    diagnosticPopup.style.height = "0";
 }
 
 
@@ -213,7 +196,7 @@ function getEveryVirgin(tree) {
 
     doSomethingForWholeFamily(tree, (element) => {
         if (directDescendentCount(element[0].id) == 0) {
-            virgins.push(element);
+            virgins.push(element[0]);
         }
     });
 
@@ -221,43 +204,46 @@ function getEveryVirgin(tree) {
 }
 
 
-function putButtonsOnVirgins() {
-    
+function generateNewNode(topic) {
+    birthChild(topic, Math.random());
+
+    var saveScroll = window.scrollY;
+    window.scrollTo(0,0);
+    var svgElements = document.querySelectorAll("body svg");
+
+    svgElements.forEach(function(svgElement) {
+        svgElement.parentNode.removeChild(svgElement);
+    });
+    doSomethingForWholeFamily(programmingPath, drawLineToChildren);
+    window.scrollTo(0, saveScroll);
 }
 
 
 document.body.onload = function () {
-    birthChild('educational', 'sped');
-    birthChild('diagnostic', 'diabolic');
-    birthChild('narmit', 'utexas');
-    birthChild('diabolic', 'disabled');
+    window.scrollTo(0,0);
+    doSomethingForWholeFamily(programmingPath, drawLineToChildren);
+}
+
+document.body.onresize = function () {
+    var svgElements = document.querySelectorAll("body svg");
     
-
-    doSomethingForWholeFamily(programmingPath, drawLineToChildren); // bugs out whenever screen changes, need to fix
-
-
-    document.body.innerHTML = document.body.innerHTML; // <- renders everything just added inside of BODY
-    
-
- // anything accessed from original document, before dynamic changes, must be done AFTER rerendering body or else it will be lost
-    var diagnosticButton = document.getElementsByClassName('tree-node'); 
-    var diagnosticPopup = document.getElementById('diagnosticPopup');
-
-    Array.from(diagnosticButton).forEach(function (node) {
-        node.addEventListener('click', () => { 
-            diagnosticPopup.style.width = "80vw";
-            diagnosticPopup.style.height = "80vh";
-
-            var subject = node.lastElementChild.innerHTML;  // to be replaced w/ AI
-            loadPopup(presetModules[subject]);
-        });
+    svgElements.forEach(function(svgElement) {
+      svgElement.parentNode.removeChild(svgElement);
     });
 
+    window.scrollTo(0,0);
+    doSomethingForWholeFamily(programmingPath, drawLineToChildren);
+}
 
-    var closeButton = document.getElementById('closePopup');
+document.body.onmousemove = function () {
+    var saveScroll = window.scrollY;
+    window.scrollTo(0,0);
+    var svgElements = document.querySelectorAll("body svg");
 
-    closeButton.addEventListener('click', () => {
-        diagnosticPopup.style.width = "0";
-        diagnosticPopup.style.height = "0";
+    svgElements.forEach(function(svgElement) {
+        svgElement.parentNode.removeChild(svgElement);
     });
+    doSomethingForWholeFamily(programmingPath, drawLineToChildren);
+    window.scrollTo(0, saveScroll);
+
 }

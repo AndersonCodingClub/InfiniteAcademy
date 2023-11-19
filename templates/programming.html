@@ -16,45 +16,44 @@
         </div>
         <div class="pop-up-container">
             <div class="pop-up" id="diagnosticPopup">
-                <div id="closePopup"><img src="{{url_for('static', filename='images/close.png')}}" style="height: 25px; width: 25px;"></div>
+                <div id="closePopup" onclick="closePopup();"><img src="{{url_for('static', filename='images/close.png')}}" style="height: 25px; width: 25px;"></div>
                 <p>Nirmit Education has graced your mind.</p>
             </div>
         </div>
 
         <div class="knowledge-zone" id="knowledge-zone">
             <div class="row" id="0">
-                <div class="tree-node" id="subject-title">
+                <div class="tree-node" id="subject-title" onclick="showPopup('subject-title');">
                     <p class="tree-node-name">Programming</p>
                 </div>
             </div> 
 
             <div class="row" id="1">
-                <div class="tree-node" id="diagnostic">
-                    <p class="tree-node-name">Diagnostic</p>
+                <div class="tree-node" id="web-design" onclick="showPopup(this.id);">
+                    <p class="tree-node-name">Web Design</p>
                 </div>
-                <div class="tree-node" id="narmit">
-                    <p class="tree-node-name">Narmit Module</p>
+                <div class="tree-node" id="algorithms" onclick="showPopup(this.id);">
+                    <p class="tree-node-name">Algorithms</p>
                 </div>
-            </div>
-
-            <div class="row" id="2">
-                <div class="tree-node" id="educational">
-                    <p class="tree-node-name">educational</p>
+                <div class="tree-node" id="languages" onclick="showPopup(this.id);">
+                    <p class="tree-node-name">Languages</p>
                 </div>
-                <div class="tree-node" id="narmit-PIDs">
-                    <p class="tree-node-name">Narmit PIDs</p>
+                <div class="tree-node" id="data-structures" onclick="showPopup(this.id);">
+                    <p class="tree-node-name">Data Structures</p>
                 </div>
-            </div>
-
-            <div class="row" id="3">
-                <div class="tree-node" id="super-narmit">
-                    <p class="tree-node-name">Super Narmit</p>
+                <div class="tree-node" id="basic-concepts" onclick="showPopup(this.id);">
+                    <p class="tree-node-name">Basic Concepts</p>
                 </div>
             </div>
         </div>
+        
         <script src="{{url_for('static', filename='programming.js')}}"></script>
         
         <div class="gray-unknown"></div>
         
     </body>
+
+    <div id="line-container">
+
+    </div>
 </html>
