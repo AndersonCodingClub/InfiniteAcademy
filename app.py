@@ -1,8 +1,14 @@
+import json
 from flask import Flask, render_template
 from tree import *
+from chat import *
+from flask_socketio import SocketIO, send, emit
+import asyncio
+import websockets
 
 
 app = Flask(__name__)
+socketio = SocketIO(app)
 
 @app.route('/')
 def index():
@@ -25,7 +31,14 @@ def tree():
     node = construct_new_tree(category='programming')
     return render_template('test_tree.html', node=node, node_level=0)
 
+@socketio.on('message')
+def handle_websocket(message):
+    data = message
+    result = get_next_nodes(data['node_name'], data['node_content'])
+    emit('result', {'result': result})
+
 if __name__ == '__main__':
     app.run(debug=True)
+    socketio.run(debug=True)
     
 #http://10.9.149.244:5000

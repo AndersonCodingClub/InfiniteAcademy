@@ -180,7 +180,7 @@ function showPopup(topic) {
 
         loadPopup(presetModules[topic]);
     } else if (getEveryVirgin(programmingPath).includes(document.getElementById(topic))) {
-        generateNewNode(topic);
+        generateNewNodes(topic, document.getElementById(topic));
     }
 }
 
@@ -204,8 +204,28 @@ function getEveryVirgin(tree) {
 }
 
 
-function generateNewNode(topic) {
-    birthChild(topic, Math.random());
+function generateNewNodes(parentTopic, parentContent) {
+    var socket = io();
+
+    socket.on("connect", () => {
+        console.log("WebSocket connection opened");
+
+        const message = {
+            node_name: parentTopic,
+            node_content: parentContent
+        };
+
+        socket.emit('message', message);
+    });
+
+    socket.on("result", (data) => {
+        console.log("Received message from Python:", data);
+
+        data.result.forEach(receivedPackage => {      //  response.result should be a list of tuples: [("name", "content"), ("name", "content")]
+            presetModules[receivedPackage[0]] = receivedPackage[1];
+            birthChild(parentContent, receivedPackage[0]);
+        });
+    });
 
     var saveScroll = window.scrollY;
     window.scrollTo(0,0);

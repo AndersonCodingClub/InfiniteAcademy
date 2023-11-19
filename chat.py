@@ -13,7 +13,7 @@ def get_topic_prompt() -> str:
     """
     context = "You are a teacher tasked with coming up with a curriculum for a student. Your tone is friendly, but to the point."
     general_task_description = "A student has just learned a topic and your job is to come up with one or more topics that the student should pursue next."
-    specific_task_description = "Topic name: {topic_name} and this topic description {topic_description}. Make sure the topics you recommend are just more advanced than the topic the student just went over. Your goal is to build difficulty slowly."
+    specific_task_description = "Previous topic name: {topic_name} and its topic description {topic_description}. Make sure the topics you recommend are just more advanced than the topic the student just went over. Your goal is to build difficulty slowly."
     format_instructions = "Format your response like this: [topic1, topic2,..topicn]. Remember, if the topic only has one logical next step, only return one topic in the same format ([topic])."
 
     return ' '.join([context, general_task_description, specific_task_description, format_instructions])
