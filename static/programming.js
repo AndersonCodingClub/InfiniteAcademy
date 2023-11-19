@@ -97,10 +97,15 @@ function birthChild(fatherNodeID, childName) {
             rowBelowFather.appendChild(newNode);
             var placeToBePut = father[1][0].previousElementSibling;
             var nextNodeId;
+            var rightMostParentNeighbor;
+            var firstNeighborKid;
+            var nextNeighborToSearchForKids;
 
             if (newNode.nextElementSibling) {
                 nextNodeId = newNode.nextElementSibling.id;
             }
+
+
 
             if (father[1][0].parentElement == rowBelowFather) {      // does not work for virgin nodes (unfortunate)
                 rowBelowFather.insertBefore(newNode, father[1][0]);
@@ -109,6 +114,21 @@ function birthChild(fatherNodeID, childName) {
                 rowBelowFather.insertBefore(newNode, placeToBePut);
             }      
 
+            if (father[0].nextElementSibling) {
+                rightMostParentNeighbor = father[0].nextElementSibling;
+                if (Array.isArray(getNodeFromTreeAsArray(programmingPath, rightMostParentNeighbor.id)[1])) {
+                    firstNeighborKid = getNodeFromTreeAsArray(programmingPath, rightMostParentNeighbor.id)[1][0];
+                    rowBelowFather.insertBefore(newNode, firstNeighborKid);
+                } else {
+                    while (!Array.isArray(getNodeFromTreeAsArray(programmingPath, rightMostParentNeighbor.id)[1])) {
+                        nextNeighborToSearchForKids = rightMostParentNeighbor;
+                        nextNeighborToSearchForKids = nextNeighborToSearchForKids.nextElementSibling;           // covers edge case: father has virgin neighbor
+                        rightMostParentNeighbor = nextNeighborToSearchForKids;
+                    }
+                    firstNeighborKid = getNodeFromTreeAsArray(programmingPath, rightMostParentNeighbor.id)[1][0];
+                    rowBelowFather.insertBefore(newNode, firstNeighborKid);
+                }
+            }
             // while (getFatherById(programmingPath, nextNodeId) != getFatherById(programmingPath, newNode.id) && getFatherById(programmingPath, newNode.previousElementSibling.id) != getFatherById(programmingPath, newNode.id)) {
             //     var neighborNode = newNode.previousElementSibling;
 
@@ -207,9 +227,11 @@ function putButtonsOnVirgins() {
 
 
 document.body.onload = function () {
-    birthChild('diagnostic', 'new');
-    birthChild('subject-title', 'js');
-    birthChild('new', 'newer');
+    birthChild('educational', 'sped');
+    birthChild('diagnostic', 'diabolic');
+    birthChild('narmit', 'utexas');
+    birthChild('diabolic', 'disabled');
+    
 
     doSomethingForWholeFamily(programmingPath, drawLineToChildren); // bugs out whenever screen changes, need to fix
 
