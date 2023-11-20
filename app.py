@@ -1,5 +1,4 @@
 from flask import Flask, render_template
-from tree import *
 from chat import *
 from flask_socketio import SocketIO, emit
 
@@ -26,11 +25,6 @@ def math():
 @app.route('/science')
 def science():
     return render_template('science.html')
-
-@app.route('/tree')
-def tree():
-    node = construct_new_tree(category='programming')
-    return render_template('test_tree.html', node=node, node_level=0)
 
 @socketio.on('message')
 def handle_websocket(message):
