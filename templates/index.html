@@ -7,8 +7,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='font.css') }}">
+        <src src="{{url_for('static', filename= 'images/infinite_logo.webp')}}">
+    
     </head>
     <body>
+        <img src="{{url_for('static', filename= 'images/infinite_logo.webp')}}" id="front-page-logo">
         <div class="header">  
             <p id="headline">Infinite Academy</p>
             <p id="caption">An AI-powered approach to education</p>
