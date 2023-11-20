@@ -1,10 +1,7 @@
-import json
 from flask import Flask, render_template
 from tree import *
 from chat import *
-from flask_socketio import SocketIO, send, emit
-import asyncio
-import websockets
+from flask_socketio import SocketIO, emit
 
 
 app = Flask(__name__)
@@ -25,6 +22,10 @@ def investing():
 @app.route('/math')
 def math():
     return render_template('math.html')
+
+@app.route('/science')
+def science():
+    return render_template('science.html')
 
 @app.route('/tree')
 def tree():

@@ -130,11 +130,16 @@ line {
 
 .gray-unknown {
     position: fixed;
-    height: 80px;
+    height: 140px;
     left: 0;
     right: 0;
     bottom: 0;
     opacity: .75;
     background: linear-gradient(0deg, rgba(33,33,33,1) 0%, rgba(33,33,33,0) 100%);
     z-index: 1;
+}
+
+#subject-title {
+    width: 250px;
+    height: 250px;
 }

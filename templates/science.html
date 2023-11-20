@@ -21,38 +21,40 @@
         </div>
 
         <div class="knowledge-zone" id="knowledge-zone">
-            
             <div class="row" id="0">
                 <div class="tree-node" id="subject-title" onclick="showPopup('subject-title');">
-                    <p class="tree-node-name">Math</p>
+                    <p class="tree-node-name">Science</p>
                 </div>
             </div> 
 
             <div class="row" id="1">
-                <div class="tree-node" id="pre-algebra" onclick="showPopup(this.id);">
-                    <p class="tree-node-name">Pre-Algebra</p>
+                <div class="tree-node" id="biology" onclick="showPopup(this.id);">
+                    <p class="tree-node-name">Biology</p>
                 </div>
-                <div class="tree-node" id="geometry" onclick="showPopup(this.id);">
-                    <p class="tree-node-name">Geometry</p>
+                <div class="tree-node" id="chemistry" onclick="showPopup(this.id);">
+                    <p class="tree-node-name">Chemistry</p>
                 </div>
-                <div class="tree-node" id="trigonometry" onclick="showPopup(this.id);">
-                    <p class="tree-node-name">Trigonometry</p>
+                <div class="tree-node" id="physics" onclick="showPopup(this.id);">
+                    <p class="tree-node-name">Physics</p>
                 </div>
-                <div class="tree-node" id="pre-calculus" onclick="showPopup(this.id);">
-                    <p class="tree-node-name">Pre-Calculus</p>
+                <div class="tree-node" id="psychology" onclick="showPopup(this.id);">
+                    <p class="tree-node-name">Psychology</p>
                 </div>
-        
+                <div class="tree-node" id="astronomy" onclick="showPopup(this.id);">
+                    <p class="tree-node-name">Astronomy</p>
+                </div>
+                <div class="tree-node" id="geology" onclick="showPopup(this.id);">
+                    <p class="tree-node-name">Geology</p>
                 </div>
             </div>
         </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
-        <script src="{{url_for('static', filename='math.js')}}"></script>
+        <script src="{{url_for('static', filename='science.js')}}"></script>
         
         <div class="gray-unknown"></div>
-
     </body>
-
+    
     <div id="line-container">
 
     </div>

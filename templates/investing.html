@@ -1,12 +1,61 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Nirmit's Infinite Academy</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename='programming.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='font.css') }}">
     </head>
     <body>
-        <div class="tree-node">
-            <a href="/investing" target="_blank" style="all: unset;">
-                <p class="tree-node-name">Investing</p>
-            </a>
+
+        <div id="nav-bar">
+            <a href="/" class="unset-a"><img class="logo" src="{{url_for('static', filename= 'images/infinite_logo.webp')}}"></a>
         </div>
+        <div class="pop-up-container">
+            <div class="pop-up" id="diagnosticPopup">
+                <div id="closePopup" onclick="closePopup();"><img src="{{url_for('static', filename='images/close.png')}}" style="height: 25px; width: 25px;"></div>
+                <p>Nirmit Education has graced your mind.</p>
+            </div>
+        </div>
+
+        <div class="knowledge-zone" id="knowledge-zone">
+            <div class="row" id="0">
+                <div class="tree-node" id="subject-title" onclick="showPopup('subject-title');">
+                    <p class="tree-node-name">Investing</p>
+                </div>
+            </div> 
+
+            <div class="row" id="1">
+                <div class="tree-node" id="stocks" onclick="showPopup(this.id);">
+                    <p class="tree-node-name">Stocks</p>
+                </div>
+                <div class="tree-node" id="bonds" onclick="showPopup(this.id);">
+                    <p class="tree-node-name">Bonds</p>
+                </div>
+                <div class="tree-node" id="mutual-funds" onclick="showPopup(this.id);">
+                    <p class="tree-node-name">Mutual Funds</p>
+                </div>
+                <div class="tree-node" id="real-estate" onclick="showPopup(this.id);">
+                    <p class="tree-node-name">Real Estate</p>
+                </div>
+                <div class="tree-node" id="commodities" onclick="showPopup(this.id);">
+                    <p class="tree-node-name">Commodities</p>
+                </div>
+                <div class="tree-node" id="exchange-traded-funds" onclick="showPopup(this.id);">
+                    <p class="tree-node-name">Exchange-Traded Funds</p>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+        <script src="{{url_for('static', filename='investing.js')}}"></script>
+        
+        <div class="gray-unknown"></div>
     </body>
+    
+    <div id="line-container">
+
+    </div>
 </html>
